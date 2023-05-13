@@ -1,0 +1,49 @@
+
+package com.portfolio.ism.service;
+
+import com.portfolio.ism.model.User;
+import com.portfolio.ism.repository.UserRepository;
+import java.util.List;
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService implements IUserService {
+    
+    @Autowired
+    public UserRepository userRepo;
+
+    @Override
+    public List<User> verUser() {
+        return userRepo.findAll();
+    }
+
+    @Override
+    public void crearUser(User use) {
+        userRepo.save(use);
+    }
+
+    @Override
+    public void borrarUser(Long id) {
+        userRepo.deleteById(id);
+    }
+
+    @Override
+    public void editarUser(User use) {
+        Optional <User> opuser = userRepo.findById(use.getId());
+        
+        if(opuser.isPresent()) {
+            User usermod = opuser.get();
+            usermod.setEmail(use.getEmail());
+            usermod.setPassword(use.getPassword());
+            userRepo.save(usermod);
+        } else {
+            throw new RuntimeException("User not found for id :: " + use.getId());
+        }
+            
+    }
+    
+    
+    
+}
