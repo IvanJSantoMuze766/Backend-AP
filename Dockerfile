@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-alpine-jdk
+FROM openjdk:17
 
 COPY target/ism-0.0.1-SNAPSHOT.jar ism-app.jar
 
