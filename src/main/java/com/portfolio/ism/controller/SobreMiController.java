@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin("http://localhost4200")
+//@CrossOrigin({"http://localhost4200",https://frontend-ism.web.app})
 public class SobreMiController {
     
     @Autowired

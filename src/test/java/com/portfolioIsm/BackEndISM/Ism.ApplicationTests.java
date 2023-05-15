@@ -1,10 +1,10 @@
-package com.portfolioYoProgramoAR.BackEndDS9;
+package com.portfolioIsm.BackEndISM;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackEndDs9ApplicationTests {
+class BackEndISMApplicationTests {
 
 	@Test
 	void contextLoads() {
